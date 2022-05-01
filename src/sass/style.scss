@@ -1,0 +1,139 @@
+@use "./colors" as *;
+@use './mixins' as *;
+
+$length:17rem;
+
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  font-size: 15px;
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: $blue2;
+  @include flex(row, center, center);
+}
+
+.card {
+  background-color: $blue1;
+  padding: 2rem;
+  border-radius: 20px;
+}
+.card-rating-content{
+  width: $length;
+  height: $length;
+  @include flex(column, space-between, flex-start);
+  @include sm{
+    width: 18rem;
+  }
+
+  img {
+    width: 1rem;
+    height: 1rem;
+    background-color: $blue3;
+    padding: 0.5rem;
+    border-radius: 50%;
+  }
+
+  h1 {
+    color: $white;
+    font-family: inherit;
+    font-size: 1.5rem;
+  }
+  p {
+    color: $grey2;
+    font-family: inherit;
+    font-size: 0.8rem;
+    // font-weight: 700;
+  }
+
+  .btn-container {
+    width: 100%;
+    @include flex(row, space-between, center);
+    button {
+      font-size: 1rem;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $blue3;
+      color: $grey1;
+      padding: 1.2rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      font-weight: 700;
+      font-family: inherit;
+
+      &:nth-child(4) {
+        &:hover {
+          background-color: $grey2;
+          color: $white;
+          transition: all 0.6s ease;
+        }
+      }
+      &:nth-child(5) {
+        &:hover {
+          background-color: $orange;
+          color: $white;
+          transition: all 0.6s ease;
+        }
+      }
+    }
+  }
+  
+  button{
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 20px;
+    border: none;
+    background-color: $orange;
+    color: white;
+    font-family: inherit;
+    
+    &:hover{
+      background-color: $white;
+      color: $orange;
+      transition: all 0.6s ease;
+    }
+  }
+}
+
+// successcomponent
+
+.card-success-content{
+    width:$length;
+    height: $length;
+    @include flex(column, space-between , center );
+    
+    h3{
+      font-size: 0.8rem;
+      background-color: $blue3;
+      padding: 8px 16px;
+      color: $orange;
+      border-radius: 20px;
+      font-weight: 400;
+      font-family: inherit;
+    }
+    h1{
+      font-family: inherit;
+      font-size: 1.5rem;
+      color: $white;
+    } 
+    p{
+      text-align: center;
+      font-family: inherit;
+      font-size: 0.8rem;
+      color: $grey2;
+    }
+}
